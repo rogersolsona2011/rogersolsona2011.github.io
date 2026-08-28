@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="ca" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Roger Solsona | Cirurgia Oral i Implantologia</title>
+    <meta name="description"
+        content="Dr. Roger Solsona Martí — odontòleg especialista en cirurgia oral i implantologia. Regeneració òssia avançada, elevació de si, cirurgia guiada i pròtesi sobre implants. Consulta a Tempus Clínica Dental (Lleida).">
+    <meta name="author" content="Roger Solsona Martí">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Dr. Roger Solsona | Cirurgia Oral i Implantologia">
+    <meta property="og:description"
+        content="Odontòleg especialista en cirurgia oral i implantologia: regeneració òssia avançada, elevació de si, cirurgia guiada i pròtesi sobre implants.">
+    <meta property="og:image" content="assets/clinical.jpg">
+
+    <!-- Favicon: monograma RS -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a2a44'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' fill='%23c2a878' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f4f6f9', 100: '#e9edf2', 200: '#c8d4e1', 300: '#9db4cb',
+                            400: '#6c8fb1', 500: '#487095', 600: '#375778', 700: '#2d4661',
+                            800: '#1a2a44', 900: '#142034',
+                        },
+                        accent: {
+                            50: '#fbf9f4', 100: '#f5efe0', 200: '#ebdebf', 300: '#ddc897',
+                            400: '#cdad6d', 500: '#c2a878', 600: '#af915d', 700: '#927649',
+                            800: '#765e3c', 900: '#614d33',
+                        },
+                        neutral: {
+                            50: '#fafafa', 100: '#f5f5f5', 200: '#e5e5e5', 300: '#d4d4d4',
+                            400: '#a3a3a3', 500: '#737373', 600: '#525252', 700: '#333333',
+                            800: '#262626', 900: '#171717',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-serif-premium {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-nav {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 229, 229, 0.3);
+        }
+
+        .zoom-img-container {
+            overflow: hidden;
+        }
+
+        .zoom-img-container img {
+            transition: transform 0.7s ease;
+        }
+
+        .zoom-img-container:hover img {
+            transform: scale(1.04);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c2a878;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1a2a44;
+        }
+
+        /* Fade-in on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Clinical gallery blur gate */
+        .clinical-locked .clinical-thumb img {
+            filter: blur(14px) saturate(0.6);
+        }
+
+        .clinical-thumb img {
+            transition: filter 0.4s ease, transform 0.6s ease;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-accent-200 selection:text-primary-800">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 lg:h-24">
+
+                <a href="#hero" class="flex flex-col focus:outline-none">
+                    <span
+                        class="font-serif-premium text-lg lg:text-xl font-semibold tracking-widest text-primary-800 uppercase">
+                        Dr. Roger Solsona
+                    </span>
+                    <span class="text-[10px] lg:text-xs tracking-[0.25em] text-accent-600 uppercase font-medium mt-0.5">
+                        Cirurgia Oral · Implants
+                    </span>
+                </a>
+
+                <nav class="hidden md:flex space-x-6 lg:space-x-9 items-center">
+                    <a href="#perfil"
+                        class="text-sm tracking-wider font-medium text-neutral-600 hover:text-primary-800 transition-colors uppercase duration-200">Perfil</a>
+                    <a href="#especialitats"
+                        class="text-sm tracking-wider font-medium text-neutral-600 hover:text-primary-800 transition-colors uppercase duration-200">Especialitats</a>
+                    <a href="#formacio"
+                        class="text-sm tracking-wider font-medium text-neutral-600 hover:text-primary-800 transition-colors uppercase duration-200">Formació</a>
+                    <a href="#experiencia"
+                        class="text-sm tracking-wider font-medium text-neutral-600 hover:text-primary-800 transition-colors uppercase duration-200">Experiència</a>
+                    <a href="#casos"
+                        class="text-sm tracking-wider font-medium text-neutral-600 hover:text-primary-800 transition-colors uppercase duration-200">Casos</a>
+                    <a href="#contacte"
+                        class="text-sm tracking-wider font-medium text-neutral-600 hover:text-primary-800 transition-colors uppercase duration-200">Contacte</a>
+                </nav>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-primary-800 focus:outline-none"
+                    aria-label="Obrir menú de navegació">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-100 shadow-xl">
+            <div class="px-6 py-8 space-y-6 flex flex-col items-center">
+                <a href="#perfil"
+                    class="mobile-link text-base tracking-widest font-medium text-neutral-700 hover:text-primary-800 uppercase">Perfil</a>
+                <a href="#especialitats"
+                    class="mobile-link text-base tracking-widest font-medium text-neutral-700 hover:text-primary-800 uppercase">Especialitats</a>
+                <a href="#formacio"
+                    class="mobile-link text-base tracking-widest font-medium text-neutral-700 hover:text-primary-800 uppercase">Formació</a>
+                <a href="#experiencia"
+                    class="mobile-link text-base tracking-widest font-medium text-neutral-700 hover:text-primary-800 uppercase">Experiència</a>
+                <a href="#casos"
+                    class="mobile-link text-base tracking-widest font-medium text-neutral-700 hover:text-primary-800 uppercase">Casos</a>
+                <a href="#contacte"
+                    class="mobile-link w-full text-center px-6 py-4 bg-primary-800 text-white text-xs tracking-widest font-bold uppercase hover:bg-accent-500 transition-colors duration-300">Contacte</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="relative min-h-[92vh] flex items-center pt-28 pb-16 overflow-hidden bg-primary-900">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/clinical.jpg"
+                alt="El Dr. Roger Solsona atenent una pacient a la consulta"
+                class="w-full h-full object-cover object-center opacity-40 scale-105 brightness-75">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-900 via-primary-900/85 to-primary-900/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-900 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 mb-6">
+                    <span class="h-[1px] w-8 bg-accent-500"></span>
+                    <span class="text-xs lg:text-sm tracking-[0.3em] font-semibold text-accent-500 uppercase">
+                        Odontologia · Cirurgia · Implants
+                    </span>
+                </div>
+
+                <h1 class="font-serif-premium text-4xl sm:text-5xl lg:text-7xl font-normal leading-tight text-white mb-6">
+                    Dr. Roger Solsona
+                </h1>
+                <p class="font-serif-premium text-xl lg:text-2xl text-accent-200 mb-8">
+                    Odontòleg especialista en cirurgia oral i implantologia
+                </p>
+
+                <p class="text-lg lg:text-xl font-light text-neutral-300 leading-relaxed mb-10 max-w-2xl">
+                    Cirurgia guiada, regeneració òssia avançada i rehabilitació sobre implants.
+                    Un enfocament basat en la planificació digital, la precisió quirúrgica i la
+                    documentació rigorosa de cada cas.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#casos"
+                        class="px-8 py-4 bg-accent-500 text-primary-900 text-xs tracking-widest font-bold uppercase hover:bg-white transition-all duration-300 shadow-lg text-center">
+                        Veure casos clínics <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                    <a href="#contacte"
+                        class="px-8 py-4 border border-white/30 text-white text-xs tracking-widest font-semibold uppercase hover:border-white hover:bg-white/5 transition-all duration-300 text-center">
+                        Contacta
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Facts strip -->
+    <div class="bg-primary-900 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
+                <div class="py-5 lg:py-6 pr-4">
+                    <p class="font-serif-premium text-accent-400 text-lg lg:text-xl">Màster UEM</p>
+                    <p class="text-[10px] lg:text-xs tracking-widest uppercase text-neutral-400 mt-1">Cirurgia Oral
+                        Avançada</p>
+                </div>
+                <div class="py-5 lg:py-6 px-4">
+                    <p class="font-serif-premium text-accent-400 text-lg lg:text-xl">+2.400 h</p>
+                    <p class="text-[10px] lg:text-xs tracking-widest uppercase text-neutral-400 mt-1">Pràctica clínica
+                        supervisada</p>
+                </div>
+                <div class="py-5 lg:py-6 px-4">
+                    <p class="font-serif-premium text-accent-400 text-lg lg:text-xl">SEPES · SECIB</p>
+                    <p class="text-[10px] lg:text-xs tracking-widest uppercase text-neutral-400 mt-1">Ponent 2022</p>
+                </div>
+                <div class="py-5 lg:py-6 px-4">
+                    <p class="font-serif-premium text-accent-400 text-lg lg:text-xl">Lleida</p>
+                    <p class="text-[10px] lg:text-xs tracking-widest uppercase text-neutral-400 mt-1">Activitat actual</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PERFIL -->
+    <section id="perfil" class="py-24 lg:py-32 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+
+                <div class="lg:col-span-5 relative group reveal">
+                    <div
+                        class="absolute -top-4 -left-4 w-2/3 h-2/3 border border-accent-300 pointer-events-none -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500">
+                    </div>
+                    <div
+                        class="absolute -bottom-4 -right-4 w-2/3 h-2/3 border border-primary-200 pointer-events-none -z-10 group-hover:-translate-x-2 group-hover:-translate-y-2 transition-transform duration-500">
+                    </div>
+                    <div class="zoom-img-container shadow-2xl">
+                        <img src="assets/portrait.jpg" alt="Retrat del Dr. Roger Solsona Martí"
+                            class="w-full h-auto object-cover aspect-[4/5]">
+                    </div>
+                    <div class="absolute bottom-6 right-6 bg-primary-800 text-white p-6 shadow-xl">
+                        <p class="font-serif-premium text-2xl font-light text-accent-400">CA · ES</p>
+                        <p class="text-[10px] tracking-widest font-semibold uppercase text-neutral-300 mt-1">EN · FR</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 flex flex-col justify-center reveal">
+                    <span class="text-xs lg:text-sm tracking-[0.25em] font-semibold text-accent-600 uppercase mb-4 block">
+                        Perfil professional
+                    </span>
+                    <h2 class="font-serif-premium text-3xl lg:text-5xl font-normal text-primary-800 leading-tight mb-8">
+                        Cirurgia i implants amb criteri, planificació i rigor
+                    </h2>
+
+                    <div class="space-y-6 text-neutral-600 font-light leading-relaxed text-base lg:text-lg">
+                        <p>
+                            Sóc <strong class="font-medium text-primary-800">Roger Solsona Martí</strong>, odontòleg
+                            graduat per la Universitat Internacional de Catalunya (UIC) i format de manera monogràfica en
+                            cirurgia oral, implantologia i pròtesi. He completat un
+                            <strong class="font-medium text-primary-800">Màster en Cirurgia Oral Avançada,
+                            Implantologia i Pròtesi</strong> a la Universidad Europea de Madrid i formació en
+                            rehabilitació sobre implants a la New York University College of Dentistry.
+                        </p>
+                        <p>
+                            La meva pràctica se centra en els casos que requereixen un abordatge quirúrgic:
+                            regeneració òssia horitzontal i vertical, tècnica de <em>saussage</em>, elevació de si
+                            maxil·lar, implants de càrrega immediata, implant immediat postextracció i rehabilitacions
+                            completes planificades amb CBCT i cirurgia guiada.
+                        </p>
+                        <p>
+                            Entre 2022 i el juliol de 2026 vaig exercir com a implantòleg de referència en diverses
+                            consultes de l'Île-de-France (França), fent sessions quirúrgiques i donant suport als equips
+                            en casos complexos. Actualment desenvolupo la meva activitat a Lleida. Documento
+                            sistemàticament els meus tractaments: disposo d'un <em>book</em> de casos clínics ampli, en
+                            part recollit en aquesta pàgina.
+                        </p>
+                        <p class="italic font-serif-premium text-primary-700 text-lg">
+                            «La cirurgia comença molt abans del quiròfan: en el diagnòstic, la planificació i la
+                            comunicació amb l'equip restaurador.»
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-neutral-100 flex flex-wrap gap-x-10 gap-y-3">
+                        <div>
+                            <h4 class="font-serif-premium text-lg font-medium text-primary-800">Roger Solsona Martí</h4>
+                            <p class="text-xs tracking-wider text-accent-600 font-medium uppercase mt-0.5">
+                                Odontòleg · Cirurgia oral i implantologia</p>
+                        </div>
+                        <!-- TODO Roger: afegeix aquí el número de col·legiat del COEC (Col·legi Oficial d'Odontòlegs i Estomatòlegs de Catalunya) si vols que hi consti. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPECIALITATS -->
+    <section id="especialitats" class="py-24 lg:py-32 bg-neutral-50 border-t border-b border-neutral-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20 reveal">
+                <span class="text-xs lg:text-sm tracking-[0.25em] font-semibold text-accent-600 uppercase mb-4 block">
+                    Àrees d'especialització
+                </span>
+                <h2 class="font-serif-premium text-3xl lg:text-5xl font-normal text-primary-800 mb-6">
+                    Cirurgia oral, regeneració i implantologia
+                </h2>
+                <div class="h-[1px] w-24 bg-accent-500 mx-auto mb-6"></div>
+                <p class="text-neutral-600 font-light leading-relaxed">
+                    Procediments quirúrgics on la planificació digital i la tècnica marquen el resultat a llarg termini
+                    de la rehabilitació.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
+                        <i class="fa-solid fa-tooth text-xl"></i>
+                    </div>
+                    <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Cirurgia oral</h3>
+                    <p class="text-sm text-neutral-600 font-light leading-relaxed">
+                        Exodòncies complexes i quirúrgiques, dents incloses i retingudes, frenectomies i petita
+                        patologia dels teixits tous i durs de la cavitat oral.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
+                        <i class="fa-solid fa-diagram-project text-xl"></i>
+                    </div>
+                    <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Implantologia guiada</h3>
+                    <p class="text-sm text-neutral-600 font-light leading-relaxed">
+                        Planificació amb CBCT i flux digital, fèrules quirúrgiques, col·locació d'implants unitaris i
+                        múltiples i protocols de càrrega immediata.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                    <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Regeneració òssia</h3>
+                    <p class="text-sm text-neutral-600 font-light leading-relaxed">
+                        Regeneració òssia guiada horitzontal i vertical, tècnica de <em>saussage</em>, empelts en bloc i
+                        particulats, i maneig de teixits tous per a un tancament sense tensió.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
+                        <i class="fa-solid fa-wind text-xl"></i>
+                    </div>
+                    <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Elevació de si maxil·lar</h3>
+                    <p class="text-sm text-neutral-600 font-light leading-relaxed">
+                        Elevació sinusal per finestra lateral i abordatge crestal, amb col·locació d'implants
+                        simultània o diferida segons la disponibilitat òssia.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Implant immediat
+                        postextracció</h3>
+                    <p class="text-sm text-neutral-600 font-light leading-relaxed">
+                        Extracció atraumàtica i col·locació immediata de l'implant amb preservació de l'alvèol i
+                        segellat, reduint el nombre d'intervencions i el temps de tractament.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
+                    <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
+                        <i class="fa-solid fa-crown text-xl"></i>
+                    </div>
+                    <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Pròtesi sobre implants</h3>
+                    <p class="text-sm text-neutral-600 font-light leading-relaxed">
+                        Rehabilitacions unitàries i completes amb ceràmica i zirconi CAD-CAM, en coordinació amb l'equip
+                        restaurador i el laboratori.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMACIÓ -->
+    <section id="formacio" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+
+                <div class="lg:col-span-4 reveal">
+                    <span class="text-xs lg:text-sm tracking-[0.25em] font-semibold text-accent-600 uppercase mb-4 block">
+                        Formació i credencials
+                    </span>
+                    <h2 class="font-serif-premium text-3xl lg:text-5xl font-normal text-primary-800 leading-tight mb-6">
+                        Un itinerari monogràfic en cirurgia
+                    </h2>
+                    <div class="h-[1px] w-24 bg-accent-500 mb-6"></div>
+                    <p class="text-neutral-600 font-light leading-relaxed">
+                        Grau, postgraus i màster orientats de manera consistent cap a la cirurgia oral, la
+                        implantologia i la pròtesi, amb més de 2.400 hores de pràctica clínica supervisada sobre
+                        pacients.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-8 reveal">
+                    <ol class="relative border-l border-neutral-200 space-y-10 ml-2">
+                        <li class="ml-8">
+                            <span class="absolute -left-[9px] w-4 h-4 bg-accent-500 border-2 border-white"></span>
+                            <p class="text-xs tracking-widest uppercase text-accent-600 font-semibold">2014 – 2019</p>
+                            <h3 class="font-serif-premium text-lg text-primary-800 mt-1">Grau en Odontologia</h3>
+                            <p class="text-sm text-neutral-500 font-light mt-1">Universitat Internacional de Catalunya
+                                (UIC) · 1.115 h de pràctica clínica sobre pacients</p>
+                        </li>
+                        <li class="ml-8">
+                            <span class="absolute -left-[9px] w-4 h-4 bg-accent-500 border-2 border-white"></span>
+                            <p class="text-xs tracking-widest uppercase text-accent-600 font-semibold">2019</p>
+                            <h3 class="font-serif-premium text-lg text-primary-800 mt-1">Postgrau en Cirurgia Oral ·
+                                Postgrau en Implantologia</h3>
+                            <p class="text-sm text-neutral-500 font-light mt-1">Universidad de Ciencias Médicas de Villa
+                                Clara (Cuba)</p>
+                        </li>
+                        <li class="ml-8">
+                            <span class="absolute -left-[9px] w-4 h-4 bg-accent-500 border-2 border-white"></span>
+                            <p class="text-xs tracking-widest uppercase text-accent-600 font-semibold">2019 – 2020</p>
+                            <h3 class="font-serif-premium text-lg text-primary-800 mt-1">Postgrau / Residència Clínica en
+                                Pròtesi</h3>
+                            <p class="text-sm text-neutral-500 font-light mt-1">Universitat Internacional de Catalunya
+                                (UIC)</p>
+                        </li>
+                        <li class="ml-8">
+                            <span class="absolute -left-[9px] w-4 h-4 bg-accent-500 border-2 border-white"></span>
+                            <p class="text-xs tracking-widest uppercase text-accent-600 font-semibold">2019 – 2020</p>
+                            <h3 class="font-serif-premium text-lg text-primary-800 mt-1">Postgrau d'Estètica Dental</h3>
+                            <p class="text-sm text-neutral-500 font-light mt-1">Fernando Autrán · SCOE (Societat Catalana
+                                d'Odontologia i Estomatologia)</p>
+                        </li>
+                        <li class="ml-8">
+                            <span class="absolute -left-[9px] w-4 h-4 bg-primary-800 border-2 border-white"></span>
+                            <p class="text-xs tracking-widest uppercase text-accent-600 font-semibold">2020 – 2022</p>
+                            <h3 class="font-serif-premium text-lg text-primary-800 mt-1">Màster en Cirurgia Oral Avançada,
+                                Implantologia i Pròtesi</h3>
+                            <p class="text-sm text-neutral-500 font-light mt-1">Universidad Europea de Madrid (UEM) ·
+                                1.350 h de pràctica clínica sobre pacients</p>
+                        </li>
+                        <li class="ml-8">
+                            <span class="absolute -left-[9px] w-4 h-4 bg-accent-500 border-2 border-white"></span>
+                            <p class="text-xs tracking-widest uppercase text-accent-600 font-semibold">2022</p>
+                            <h3 class="font-serif-premium text-lg text-primary-800 mt-1">Current Concepts in American
+                                Dentistry: Advances in Implantology and Oral Rehabilitation</h3>
+                            <p class="text-sm text-neutral-500 font-light mt-1">New York University College of Dentistry</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Conferències -->
+            <div class="mt-20 pt-16 border-t border-neutral-100 reveal">
+                <h3 class="font-serif-premium text-2xl lg:text-3xl font-normal text-primary-800 mb-10">
+                    Ponències i divulgació
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-neutral-50 p-8 border border-neutral-200/60">
+                        <p class="text-xs tracking-widest uppercase text-accent-600 font-semibold mb-2">SEPES 2022</p>
+                        <p class="text-sm text-neutral-500 font-light mb-3">Sociedad Española de Prótesis Estomatológica y
+                            Estética</p>
+                        <p class="text-primary-800 font-light leading-relaxed">
+                            «Característiques i indicacions de les ceràmiques CAD-CAM. Revisió de la literatura.»
+                        </p>
+                    </div>
+                    <div class="bg-neutral-50 p-8 border border-neutral-200/60">
+                        <p class="text-xs tracking-widest uppercase text-accent-600 font-semibold mb-2">SECIB 2022</p>
+                        <p class="text-sm text-neutral-500 font-light mb-3">Sociedad Española de Cirugía Bucal</p>
+                        <p class="text-primary-800 font-light leading-relaxed">
+                            «Implant simultani amb la tècnica <em>Bonering</em> en alvèols postextracció. Revisió de la
+                            literatura.»
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIÈNCIA -->
+    <section id="experiencia" class="py-24 lg:py-32 bg-primary-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-3xl mb-16 reveal">
+                <span class="text-xs lg:text-sm tracking-[0.25em] font-semibold text-accent-500 uppercase mb-4 block">
+                    Trajectòria professional
+                </span>
+                <h2 class="font-serif-premium text-3xl lg:text-5xl font-normal text-white leading-tight">
+                    De Lleida a París, i de tornada a Lleida
+                </h2>
+                <div class="h-[1px] w-24 bg-accent-500 mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 reveal">
+                <div>
+                    <p class="text-xs tracking-widest uppercase text-accent-400 font-semibold">2018</p>
+                    <h3 class="font-serif-premium text-lg text-white mt-2">Assistent dental</h3>
+                    <p class="text-sm text-neutral-400 font-light mt-1">Clínica Opción Dental · Lleida</p>
+                </div>
+                <div>
+                    <p class="text-xs tracking-widest uppercase text-accent-400 font-semibold">2019 – 2020</p>
+                    <h3 class="font-serif-premium text-lg text-white mt-2">Odontologia general</h3>
+                    <p class="text-sm text-neutral-400 font-light mt-1">Clínica Dental Viana · Lleida</p>
+                </div>
+                <div>
+                    <p class="text-xs tracking-widest uppercase text-accent-400 font-semibold">2022 – 2023</p>
+                    <h3 class="font-serif-premium text-lg text-white mt-2">Cirurgià implantòleg</h3>
+                    <p class="text-sm text-neutral-400 font-light mt-1">Docali · Colomiers (França)</p>
+                </div>
+                <div>
+                    <p class="text-xs tracking-widest uppercase text-accent-400 font-semibold">2023 – 2024</p>
+                    <h3 class="font-serif-premium text-lg text-white mt-2">Cirurgià implantòleg</h3>
+                    <p class="text-sm text-neutral-400 font-light mt-1">Centre de Santé Dentaire Porte d'Orléans · París
+                        (França)</p>
+                </div>
+                <div>
+                    <p class="text-xs tracking-widest uppercase text-accent-400 font-semibold">2024 – jul. 2026</p>
+                    <h3 class="font-serif-premium text-lg text-white mt-2">Cirurgià implantòleg</h3>
+                    <p class="text-sm text-neutral-400 font-light mt-1">SELAS Cabinet de la Grand Place ·
+                        Boulogne-Billancourt (França)</p>
+                </div>
+                <div>
+                    <p class="text-xs tracking-widest uppercase text-accent-400 font-semibold">2024 – jul. 2026</p>
+                    <h3 class="font-serif-premium text-lg text-white mt-2">Cirurgià implantòleg</h3>
+                    <p class="text-sm text-neutral-400 font-light mt-1">SELAS Cabinet du Marché · Montrouge (França)</p>
+                </div>
+                <div>
+                    <p class="text-xs tracking-widest uppercase text-accent-400 font-semibold">2026 – actualitat</p>
+                    <h3 class="font-serif-premium text-lg text-white mt-2">Cirurgià implantòleg</h3>
+                    <p class="text-sm text-neutral-400 font-light mt-1">Tempus Clínica Dental · Lleida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASOS CLÍNICS -->
+    <section id="casos" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-3xl mb-12 reveal">
+                <span class="text-xs lg:text-sm tracking-[0.25em] font-semibold text-accent-600 uppercase mb-4 block">
+                    Casos clínics documentats
+                </span>
+                <h2 class="font-serif-premium text-3xl lg:text-5xl font-normal text-primary-800 leading-tight">
+                    Book de casos quirúrgics
+                </h2>
+                <div class="h-[1px] w-24 bg-accent-500 mt-6 mb-8"></div>
+                <p class="text-neutral-600 font-light leading-relaxed text-base lg:text-lg">
+                    Recull de 17 casos de la pràctica pròpia, centrats en regeneració òssia, elevació de si i
+                    implantologia. Totes les imatges són fotografies intraorals i estudis radiològics de documentació
+                    clínica, sense dades identificatives del pacient.
+                </p>
+            </div>
+
+            <!-- Content warning gate -->
+            <div id="clinical-warning"
+                class="mb-10 border border-accent-300 bg-accent-50 p-6 lg:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 reveal">
+                <div class="flex items-start gap-4">
+                    <i class="fa-solid fa-triangle-exclamation text-accent-600 text-xl mt-0.5"></i>
+                    <p class="text-sm text-primary-800 font-light leading-relaxed max-w-2xl">
+                        Aquesta secció conté <strong class="font-medium">imatges quirúrgiques reals</strong> (camp
+                        operatori, teixits i sang) destinades a professionals del sector. Prem el botó per mostrar-les.
+                    </p>
+                </div>
+                <button id="reveal-clinical"
+                    class="shrink-0 px-6 py-3 bg-primary-800 text-white text-xs tracking-widest font-bold uppercase hover:bg-accent-600 transition-colors duration-300">
+                    Mostra les imatges
+                </button>
+            </div>
+
+            <div id="clinical-gallery" class="clinical-locked grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c01.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c01.jpg" alt="Elevació de si maxil·lar amb implant simultani"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Elevació de si maxil·lar
+                        amb implant simultani</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c02.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c02.jpg" alt="Regeneració òssia vertical amb tècnica saussage"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia vertical
+                        · tècnica «saussage»</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c03.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c03.jpg" alt="Regeneració òssia horitzontal amb tècnica de butxaca periòstica"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
+                        horitzontal · Periosteal Pocket Flap</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c04.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c04.jpg" alt="Regeneració òssia guiada amb empelt particulat i membrana"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia guiada ·
+                        empelt particulat i membrana</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c05.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c05.jpg" alt="Seqüència quirúrgica de regeneració òssia horitzontal"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
+                        horitzontal · seqüència quirúrgica</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c06.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c06.jpg" alt="Regeneració òssia horitzontal amb cargols de tenda"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
+                        horitzontal amb cargols de tenda</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c07.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c07.jpg" alt="Regeneració òssia horitzontal amb empelt autòleg i biomaterial"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
+                        horitzontal · empelt autòleg i biomaterial</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c08.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c08.jpg" alt="Elevació de si, regeneració horitzontal i implants"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Elevació de si +
+                        regeneració horitzontal + implants</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c09.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c09.jpg" alt="Regeneració òssia horitzontal: situació inicial i resultat"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
+                        horitzontal · situació inicial i resultat</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c10.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c10.jpg" alt="Dent inclosa amb planificació guiada per CBCT"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Dent inclosa ·
+                        planificació guiada per CBCT</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c11.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c11.jpg" alt="Rehabilitació maxil·lar amb elevació de si i tècnica saussage"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Rehabilitació maxil·lar ·
+                        elevació de si i tècnica «saussage»</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c12.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c12.jpg" alt="Regeneració òssia horitzontal"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
+                        horitzontal</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c13.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c13.jpg" alt="Implant immediat postextracció"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Implant immediat
+                        postextracció</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c14.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c14.jpg" alt="Regeneració òssia al sector anterior del maxil·lar"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia · sector
+                        anterior maxil·lar</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c15.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c15.jpg" alt="Implant immediat postextracció en un molar"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Implant immediat
+                        postextracció · molar</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c16.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c16.jpg" alt="Elevació de si maxil·lar per finestra lateral"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Elevació de si maxil·lar ·
+                        finestra lateral</figcaption>
+                </figure>
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c17.jpg">
+                    <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
+                        <img src="assets/c17.jpg" alt="Elevació de si, regeneració horitzontal i implant"
+                            class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Elevació de si +
+                        regeneració horitzontal + implant</figcaption>
+                </figure>
+            </div>
+
+            <p class="text-xs text-neutral-400 font-light mt-8 max-w-2xl">
+                Book complet amb la documentació de cada cas (situació inicial, planificació, cirurgia i control)
+                disponible sota petició per a professionals i centres.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACTE -->
+    <section id="contacte" class="py-24 lg:py-32 bg-neutral-50 border-t border-neutral-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+
+                <div class="lg:col-span-6 flex flex-col reveal">
+                    <span class="text-xs lg:text-sm tracking-[0.25em] font-semibold text-accent-600 uppercase mb-4 block">
+                        Contacte
+                    </span>
+                    <h2 class="font-serif-premium text-3xl lg:text-5xl font-normal text-primary-800 mb-8">
+                        Col·laboracions i derivacions quirúrgiques
+                    </h2>
+
+                    <div class="space-y-8 mb-12">
+                        <div class="flex items-start">
+                            <div class="text-accent-500 mr-4 mt-1"><i class="fa-solid fa-envelope text-lg"></i></div>
+                            <div>
+                                <h4 class="font-serif-premium text-lg font-medium text-primary-800">Correu electrònic</h4>
+                                <p class="text-neutral-500 text-sm font-light mt-1">
+                                    <a href="mailto:rogersolsona2011@gmail.com"
+                                        class="hover:text-primary-800 transition-colors">rogersolsona2011@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-accent-500 mr-4 mt-1"><i class="fa-solid fa-phone text-lg"></i></div>
+                            <div>
+                                <h4 class="font-serif-premium text-lg font-medium text-primary-800">Telèfon</h4>
+                                <p class="text-neutral-500 text-sm font-light mt-1">
+                                    <a href="tel:+34692203220" class="hover:text-primary-800 transition-colors">+34 692 20
+                                        32 20</a>
+                                    <span class="text-neutral-400">· Espanya</span>
+                                </p>
+                                <p class="text-neutral-500 text-sm font-light">
+                                    <a href="tel:+33615315558" class="hover:text-primary-800 transition-colors">+33 6 15
+                                        31 55 58</a>
+                                    <span class="text-neutral-400">· França</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-accent-500 mr-4 mt-1"><i class="fa-solid fa-location-dot text-lg"></i></div>
+                            <div>
+                                <h4 class="font-serif-premium text-lg font-medium text-primary-800">Àmbit d'activitat</h4>
+                                <p class="text-neutral-500 text-sm font-light mt-1">
+                                    <span class="text-primary-800 font-medium">Tempus Clínica Dental</span><br>
+                                    Carrer Enric Granados, 6, 25008 Lleida
+                                </p>
+                                <p class="text-neutral-500 text-sm font-light">
+                                    <a href="tel:+34973170722" class="hover:text-primary-800 transition-colors">+34 973
+                                        170 722</a>
+                                </p>
+                                <p class="text-neutral-500 text-sm font-light mt-2">
+                                    Disponible per a col·laboracions, derivacions i casos quirúrgics complexos.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-accent-500 mr-4 mt-1"><i class="fa-solid fa-language text-lg"></i></div>
+                            <div>
+                                <h4 class="font-serif-premium text-lg font-medium text-primary-800">Idiomes</h4>
+                                <ul class="text-neutral-500 text-sm font-light mt-1 space-y-1">
+                                    <li>Català i castellà — llengües maternes</li>
+                                    <li>Anglès — First Certificate in English (Cambridge, 2012), amb estades de
+                                        reforç a Londres (2 beques) i 5 setmanes a Torquay (Devon)</li>
+                                    <li>Francès — resident a França de 2022 a 2026 (4 anys)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 reveal">
+                    <!-- TODO Roger: substitueix l'acció del formulari per l'endpoint real de Formspree (https://formspree.io/f/XXXXXXXX) o el teu servei de correu. -->
+                    <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST"
+                        class="bg-white p-8 border border-neutral-200/80 shadow-lg space-y-6">
+                        <h3 class="font-serif-premium text-xl font-medium text-primary-800 border-b border-neutral-100 pb-4">
+                            Escriu-me un missatge
+                        </h3>
+                        <input type="hidden" name="_subject" value="Missatge enviat des de la web">
+
+                        <div>
+                            <label for="name"
+                                class="block text-xs uppercase tracking-wider font-semibold text-neutral-500 mb-2">Nom i
+                                cognoms *</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 focus:outline-none focus:border-accent-500 focus:bg-white text-sm transition-colors duration-200">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email"
+                                    class="block text-xs uppercase tracking-wider font-semibold text-neutral-500 mb-2">Correu
+                                    electrònic *</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 focus:outline-none focus:border-accent-500 focus:bg-white text-sm transition-colors duration-200">
+                            </div>
+                            <div>
+                                <label for="entity"
+                                    class="block text-xs uppercase tracking-wider font-semibold text-neutral-500 mb-2">Centre
+                                    / clínica</label>
+                                <input type="text" id="entity" name="entity"
+                                    class="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 focus:outline-none focus:border-accent-500 focus:bg-white text-sm transition-colors duration-200">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message"
+                                class="block text-xs uppercase tracking-wider font-semibold text-neutral-500 mb-2">Missatge
+                                *</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-3 bg-neutral-50 border border-neutral-200 focus:outline-none focus:border-accent-500 focus:bg-white text-sm transition-colors duration-200"></textarea>
+                        </div>
+
+                        <div class="flex items-start">
+                            <input type="checkbox" id="privacy" name="privacy" required
+                                class="mt-1 h-4 w-4 text-primary-800 border-neutral-300 focus:ring-accent-500">
+                            <label for="privacy" class="ml-3 text-xs text-neutral-500 font-light leading-relaxed">
+                                He llegit i accepto la <a href="legal.html#privacitat"
+                                    class="underline hover:text-primary-800">política de privacitat</a>. Les meves dades
+                                s'utilitzaran únicament per respondre a aquesta consulta.
+                            </label>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 bg-primary-800 text-white text-xs tracking-widest font-bold uppercase hover:bg-accent-500 hover:text-primary-900 transition-all duration-300 shadow-md">
+                            Enviar missatge
+                        </button>
+                        <p id="form-status" class="text-sm font-light hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-primary-800 pb-12 mb-12">
+                <div class="space-y-4">
+                    <h3 class="font-serif-premium text-xl font-semibold tracking-wider text-white uppercase">Dr. Roger
+                        Solsona</h3>
+                    <p class="text-xs tracking-[0.2em] text-accent-500 uppercase font-medium">Cirurgia Oral · Implants</p>
+                    <p class="text-sm text-neutral-400 font-light leading-relaxed pr-8">
+                        Odontòleg especialista en cirurgia oral i implantologia. Regeneració òssia avançada, elevació de
+                        si i rehabilitació sobre implants.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-serif-premium text-md font-medium text-white mb-6 uppercase tracking-wider">Navegació
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#perfil" class="text-sm text-neutral-400 hover:text-accent-500 transition-colors">Perfil</a></li>
+                        <li><a href="#especialitats" class="text-sm text-neutral-400 hover:text-accent-500 transition-colors">Especialitats</a></li>
+                        <li><a href="#formacio" class="text-sm text-neutral-400 hover:text-accent-500 transition-colors">Formació</a></li>
+                        <li><a href="#casos" class="text-sm text-neutral-400 hover:text-accent-500 transition-colors">Casos clínics</a></li>
+                        <li><a href="#contacte" class="text-sm text-neutral-400 hover:text-accent-500 transition-colors">Contacte</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif-premium text-md font-medium text-white mb-6 uppercase tracking-wider">Contacte
+                    </h4>
+                    <ul class="space-y-3 text-sm text-neutral-400 font-light">
+                        <li><a href="mailto:rogersolsona2011@gmail.com" class="hover:text-accent-500 transition-colors">rogersolsona2011@gmail.com</a></li>
+                        <li><a href="tel:+34692203220" class="hover:text-accent-500 transition-colors">+34 692 20 32 20</a> · Espanya</li>
+                        <li><a href="tel:+33615315558" class="hover:text-accent-500 transition-colors">+33 6 15 31 55 58</a> · França</li>
+                        <li>Lleida · Catalunya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-neutral-500">
+                <p>&copy; <span id="year"></span> Roger Solsona Martí. Tots els drets reservats.</p>
+                <div class="flex flex-wrap gap-x-6 gap-y-2">
+                    <a href="legal.html#avis-legal" class="hover:text-accent-500 transition-colors">Avís legal</a>
+                    <a href="legal.html#privacitat" class="hover:text-accent-500 transition-colors">Política de
+                        privacitat</a>
+                    <a href="legal.html#cookies" class="hover:text-accent-500 transition-colors">Política de cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox"
+        class="hidden fixed inset-0 z-[60] bg-primary-900/95 items-center justify-center p-4 lg:p-10">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white text-3xl"
+            aria-label="Tancar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Cas clínic ampliat"
+            class="max-w-full max-h-full object-contain shadow-2xl">
+    </div>
+
+    <script>
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('fa-bars', !isOpen);
+            menuIcon.classList.toggle('fa-xmark', isOpen);
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-xmark');
+            });
+        });
+
+        // Header shadow on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY > 40;
+            header.classList.toggle('shadow-lg', scrolled);
+            header.classList.toggle('bg-white/95', scrolled);
+        });
+
+        // Reveal on scroll
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('is-visible');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Clinical gallery gate
+        const revealBtn = document.getElementById('reveal-clinical');
+        const gallery = document.getElementById('clinical-gallery');
+        const warning = document.getElementById('clinical-warning');
+        revealBtn.addEventListener('click', () => {
+            gallery.classList.remove('clinical-locked');
+            warning.classList.add('hidden');
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        document.querySelectorAll('.clinical-thumb').forEach(fig => {
+            fig.addEventListener('click', () => {
+                if (gallery.classList.contains('clinical-locked')) return;
+                lightboxImg.src = fig.dataset.src;
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            lightboxImg.src = '';
+            document.body.style.overflow = '';
+        }
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+        // Contact form (progressive enhancement over Formspree)
+        const form = document.getElementById('contact-form');
+        const statusEl = document.getElementById('form-status');
+        form.addEventListener('submit', async (e) => {
+            const action = form.getAttribute('action') || '';
+            if (action.includes('your-form-id')) {
+                // Endpoint not configured yet — don't lose the message, open the mail client.
+                e.preventDefault();
+                const body = encodeURIComponent(
+                    `Nom: ${form.name.value}\nCentre: ${form.entity.value}\n\n${form.message.value}`);
+                window.location.href =
+                    `mailto:rogersolsona2011@gmail.com?subject=${encodeURIComponent('Missatge enviat des de la web')}&body=${body}`;
+                return;
+            }
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const original = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Enviant...';
+            try {
+                const res = await fetch(action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                statusEl.classList.remove('hidden');
+                if (res.ok) {
+                    form.reset();
+                    statusEl.textContent = 'Missatge enviat. Et respondré al més aviat possible.';
+                    statusEl.classList.add('text-green-700');
+                } else {
+                    statusEl.textContent = 'No s\'ha pogut enviar. Escriu directament a rogersolsona2011@gmail.com.';
+                    statusEl.classList.add('text-red-600');
+                }
+            } catch (err) {
+                statusEl.classList.remove('hidden');
+                statusEl.textContent = 'Error de connexió. Escriu directament a rogersolsona2011@gmail.com.';
+                statusEl.classList.add('text-red-600');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = original;
+            }
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+# Ignore everything at the project root by default...
+/*
+
+# ...and only track the deployable static site
+!/.gitignore
+!/index.html
+!/legal.html
+!/assets/
+
+# never commit macOS metadata, even inside tracked folders
+**/.DS_Store
