@@ -12,28 +12,10 @@
     <link rel="icon"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a2a44'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' fill='%23c2a878' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: { 700: '#2d4661', 800: '#1a2a44', 900: '#142034' },
-                        accent: { 500: '#c2a878', 600: '#af915d' },
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Estils compilats (Tailwind) + tipografies locals -->
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/playfair-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/site.css">
     <style>
         body { font-family: 'Inter', sans-serif; color: #333; -webkit-font-smoothing: antialiased; }
         .font-serif-premium { font-family: 'Playfair Display', serif; }
@@ -171,10 +153,8 @@
         <p>Alguns d'aquests proveïdors són als Estats Units, de manera que el tractament pot implicar una transferència
             internacional de dades, que es fa amb les garanties previstes al RGPD (decisió d'adequació del Marc de
             Privacitat de Dades UE-EUA o clàusules contractuals tipus, segons el cas).</p>
-        <p>La càrrega de tipografies i estils des de xarxes de distribució de contingut de tercers (Google Fonts,
-            Cloudflare i Tailwind Labs) pot implicar que aquests proveïdors registrin l'adreça IP de la persona usuària com a
-            part del servei de lliurament dels fitxers. Vegeu-ne el detall a la <a href="#cookies">política de
-                cookies</a>.</p>
+        <p>Com qualsevol servidor web, el proveïdor d'allotjament pot registrar l'adreça IP i dades tècniques del
+            navegador per prestar el servei i garantir-ne la seguretat.</p>
 
         <h3>2.6. Drets de la persona interessada</h3>
         <p>Podeu exercir els drets d'<strong>accés, rectificació, supressió, oposició, limitació del tractament i
@@ -198,18 +178,10 @@
             (<em>localStorage</em> o similars). Per aquest motiu no es mostra cap bàner de consentiment de cookies.</p>
 
         <h3>3.2. Connexions a serveis de tercers</h3>
-        <p>Per mostrar-se correctament, el web carrega alguns recursos (tipografies i fulls d'estil) des de xarxes de
-            distribució de contingut externes:</p>
-        <ul>
-            <li><strong>Google Fonts</strong> (Google Ireland Ltd. / Google LLC) — tipografies.</li>
-            <li><strong>Cloudflare</strong> (cdnjs) — icones.</li>
-            <li><strong>Tailwind Labs</strong> (cdn.tailwindcss.com) — full d'estils.</li>
-        </ul>
-        <p>Aquestes connexions no instal·len cookies, però els proveïdors poden registrar l'adreça IP i dades tècniques
-            del navegador com a part del lliurament dels fitxers, cosa que pot implicar una transferència de dades fora
-            de l'Espai Econòmic Europeu amb les garanties previstes a la normativa. Si no hi esteu d'acord, podeu
-            configurar el navegador per bloquejar aquestes connexions, tot i que la pàgina pot perdre part de la
-            presentació visual.</p>
+        <p>Tots els recursos del web (tipografies, estils, icones i imatges) se serveixen des del mateix allotjament.
+            El web <strong>no es connecta a xarxes de distribució de contingut ni a altres serveis de tercers</strong>
+            mentre es navega. L'única excepció és l'enviament voluntari del formulari de contacte, que es tramet a
+            FormSubmit tal com s'explica a la <a href="#privacitat">política de privacitat</a>.</p>
 
         <h3>3.3. Actualitzacions</h3>
         <p>Si en el futur s'incorporen eines que sí que facin servir cookies (per exemple, analítica web), aquesta

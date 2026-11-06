@@ -29,47 +29,11 @@
     <link rel="icon"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a2a44'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' fill='%23c2a878' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f4f6f9', 100: '#e9edf2', 200: '#c8d4e1', 300: '#9db4cb',
-                            400: '#6c8fb1', 500: '#487095', 600: '#375778', 700: '#2d4661',
-                            800: '#1a2a44', 900: '#142034',
-                        },
-                        accent: {
-                            50: '#fbf9f4', 100: '#f5efe0', 200: '#ebdebf', 300: '#ddc897',
-                            400: '#cdad6d', 500: '#c2a878', 600: '#af915d', 700: '#927649',
-                            800: '#765e3c', 900: '#614d33',
-                        },
-                        neutral: {
-                            50: '#fafafa', 100: '#f5f5f5', 200: '#e5e5e5', 300: '#d4d4d4',
-                            400: '#a3a3a3', 500: '#737373', 600: '#525252', 700: '#333333',
-                            800: '#262626', 900: '#171717',
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Estils compilats (Tailwind) + tipografies locals -->
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/playfair-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/site.css">
+    <link rel="preload" href="assets/clinical.webp" as="image" fetchpriority="high">
 
     <style type="text/css">
         body {
@@ -175,8 +139,9 @@
                 </nav>
 
                 <button id="mobile-menu-btn" class="md:hidden p-2 text-primary-800 focus:outline-none"
-                    aria-label="Obrir menú de navegació">
-                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    aria-label="Obrir menú de navegació" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="icon text-xl" id="menu-icon-open" viewBox="0 0 448 512" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+                    <svg class="icon text-xl hidden" id="menu-icon-close" viewBox="0 0 384 512" aria-hidden="true"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
                 </button>
             </div>
         </div>
@@ -203,7 +168,7 @@
     <!-- HERO -->
     <section id="hero" class="relative min-h-[92vh] flex items-center pt-28 pb-16 overflow-hidden bg-primary-900">
         <div class="absolute inset-0 z-0">
-            <img src="assets/clinical.jpg"
+            <img src="assets/clinical.webp" width="855" height="1153" fetchpriority="high"
                 alt="El Dr. Roger Solsona atenent una pacient a la consulta"
                 class="w-full h-full object-cover object-top opacity-40 scale-105 brightness-75">
             <div class="absolute inset-0 bg-gradient-to-r from-primary-900 via-primary-900/85 to-primary-900/30"></div>
@@ -235,7 +200,7 @@
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
                     <a href="#casos"
                         class="px-8 py-4 bg-accent-500 text-primary-900 text-xs tracking-widest font-bold uppercase hover:bg-white transition-all duration-300 shadow-lg text-center">
-                        Veure casos clínics <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        Veure casos clínics <svg class="icon ml-2 text-xs" viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
                     </a>
                     <a href="#contacte"
                         class="px-8 py-4 border border-white/30 text-white text-xs tracking-widest font-semibold uppercase hover:border-white hover:bg-white/5 transition-all duration-300 text-center">
@@ -286,7 +251,7 @@
                         class="absolute -bottom-4 -right-4 w-2/3 h-2/3 border border-primary-200 pointer-events-none -z-10 group-hover:-translate-x-2 group-hover:-translate-y-2 transition-transform duration-500">
                     </div>
                     <div class="zoom-img-container shadow-2xl">
-                        <img src="assets/portrait.jpg" alt="Retrat del Dr. Roger Solsona Martí"
+                        <img src="assets/portrait.webp" width="782" height="1000" loading="lazy" decoding="async" alt="Retrat del Dr. Roger Solsona Martí"
                             class="w-full h-auto object-cover aspect-[4/5]">
                     </div>
                     <div class="absolute bottom-6 right-6 bg-primary-800 text-white p-6 shadow-xl">
@@ -365,7 +330,7 @@
 
                 <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
                     <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
-                        <i class="fa-solid fa-tooth text-xl"></i>
+                        <svg class="icon text-xl" viewBox="0 0 448 512" aria-hidden="true"><path d="M186.1 52.1C169.3 39.1 148.7 32 127.5 32C74.7 32 32 74.7 32 127.5v6.2c0 15.8 3.7 31.3 10.7 45.5l23.5 47.1c4.5 8.9 7.6 18.4 9.4 28.2l36.7 205.8c2 11.2 11.6 19.4 22.9 19.8s21.4-7.4 24-18.4l28.9-121.3C192.2 323.7 207 312 224 312s31.8 11.7 35.8 28.3l28.9 121.3c2.6 11.1 12.7 18.8 24 18.4s20.9-8.6 22.9-19.8l36.7-205.8c1.8-9.8 4.9-19.3 9.4-28.2l23.5-47.1c7.1-14.1 10.7-29.7 10.7-45.5v-2.1c0-55-44.6-99.6-99.6-99.6c-24.1 0-47.4 8.8-65.6 24.6l-3.2 2.8 19.5 15.2c7 5.4 8.2 15.5 2.8 22.5s-15.5 8.2-22.5 2.8l-24.4-19-37-28.8z"/></svg>
                     </div>
                     <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Cirurgia oral</h3>
                     <p class="text-sm text-neutral-600 font-light leading-relaxed">
@@ -376,7 +341,7 @@
 
                 <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
                     <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
-                        <i class="fa-solid fa-diagram-project text-xl"></i>
+                        <svg class="icon text-xl" viewBox="0 0 576 512" aria-hidden="true"><path d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V96H384V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H432c-26.5 0-48-21.5-48-48V160H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H272c-26.5 0-48-21.5-48-48V336c0-1.7 .1-3.4 .3-5L144 224H48c-26.5 0-48-21.5-48-48V80z"/></svg>
                     </div>
                     <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Implantologia guiada</h3>
                     <p class="text-sm text-neutral-600 font-light leading-relaxed">
@@ -387,7 +352,7 @@
 
                 <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
                     <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
-                        <i class="fa-solid fa-layer-group text-xl"></i>
+                        <svg class="icon text-xl" viewBox="0 0 576 512" aria-hidden="true"><path d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z"/></svg>
                     </div>
                     <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Regeneració òssia</h3>
                     <p class="text-sm text-neutral-600 font-light leading-relaxed">
@@ -398,7 +363,7 @@
 
                 <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
                     <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
-                        <i class="fa-solid fa-wind text-xl"></i>
+                        <svg class="icon text-xl" viewBox="0 0 512 512" aria-hidden="true"><path d="M288 32c0 17.7 14.3 32 32 32h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H352c53 0 96-43 96-96s-43-96-96-96H320c-17.7 0-32 14.3-32 32zm64 352c0 17.7 14.3 32 32 32h32c53 0 96-43 96-96s-43-96-96-96H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H384c-17.7 0-32 14.3-32 32zM128 512h32c53 0 96-43 96-96s-43-96-96-96H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H160c17.7 0 32 14.3 32 32s-14.3 32-32 32H128c-17.7 0-32 14.3-32 32s14.3 32 32 32z"/></svg>
                     </div>
                     <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Elevació de si maxil·lar</h3>
                     <p class="text-sm text-neutral-600 font-light leading-relaxed">
@@ -409,7 +374,7 @@
 
                 <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
                     <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
-                        <i class="fa-solid fa-bolt text-xl"></i>
+                        <svg class="icon text-xl" viewBox="0 0 448 512" aria-hidden="true"><path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"/></svg>
                     </div>
                     <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Implant immediat
                         postextracció</h3>
@@ -421,7 +386,7 @@
 
                 <div class="bg-white p-8 lg:p-10 border border-neutral-200/60 hover:border-accent-400 hover:shadow-xl transition-all duration-300 group reveal">
                     <div class="w-14 h-14 bg-primary-50 flex items-center justify-center text-primary-800 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300 mb-8">
-                        <i class="fa-solid fa-crown text-xl"></i>
+                        <svg class="icon text-xl" viewBox="0 0 576 512" aria-hidden="true"><path d="M309 106c11.4-7 19-19.7 19-34c0-22.1-17.9-40-40-40s-40 17.9-40 40c0 14.4 7.6 27 19 34L209.7 220.6c-9.1 18.2-32.7 23.4-48.6 10.7L72 160c5-6.7 8-15 8-24c0-22.1-17.9-40-40-40S0 113.9 0 136s17.9 40 40 40c.2 0 .5 0 .7 0L86.4 427.4c5.5 30.4 32 52.6 63 52.6H426.6c30.9 0 57.4-22.1 63-52.6L535.3 176c.2 0 .5 0 .7 0c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40c0 9 3 17.3 8 24l-89.1 71.3c-15.9 12.7-39.5 7.5-48.6-10.7L309 106z"/></svg>
                     </div>
                     <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Pròtesi sobre implants</h3>
                     <p class="text-sm text-neutral-600 font-light leading-relaxed">
@@ -608,7 +573,7 @@
             <div id="clinical-warning"
                 class="mb-10 border border-accent-300 bg-accent-50 p-6 lg:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 reveal">
                 <div class="flex items-start gap-4">
-                    <i class="fa-solid fa-triangle-exclamation text-accent-600 text-xl mt-0.5"></i>
+                    <svg class="icon text-accent-600 text-xl mt-0.5" viewBox="0 0 512 512" aria-hidden="true"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
                     <p class="text-sm text-primary-800 font-light leading-relaxed max-w-2xl">
                         Aquesta secció conté <strong class="font-medium">imatges quirúrgiques reals</strong> (camp
                         operatori, teixits i sang) destinades a professionals del sector. Prem el botó per mostrar-les.
@@ -621,137 +586,137 @@
             </div>
 
             <div id="clinical-gallery" class="clinical-locked grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c01.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c01.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c01.jpg" alt="Elevació de si maxil·lar amb implant simultani"
+                        <img src="assets/c01-thumb.webp" width="800" height="450" decoding="async" alt="Elevació de si maxil·lar amb implant simultani"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Elevació de si maxil·lar
                         amb implant simultani</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c02.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c02.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c02.jpg" alt="Regeneració òssia vertical amb tècnica sausage"
+                        <img src="assets/c02-thumb.webp" width="800" height="450" decoding="async" alt="Regeneració òssia vertical amb tècnica sausage"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia vertical
                         · tècnica «sausage»</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c03.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c03.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c03.jpg" alt="Regeneració òssia horitzontal amb tècnica de butxaca periòstica"
+                        <img src="assets/c03-thumb.webp" width="800" height="450" decoding="async" alt="Regeneració òssia horitzontal amb tècnica de butxaca periòstica"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
                         horitzontal · Periosteal Pocket Flap</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c04.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c04.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c04.jpg" alt="Regeneració òssia guiada amb empelt particulat i membrana"
+                        <img src="assets/c04-thumb.webp" width="800" height="450" decoding="async" alt="Regeneració òssia guiada amb empelt particulat i membrana"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia guiada ·
                         empelt particulat i membrana</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c05.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c05.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c05.jpg" alt="Seqüència quirúrgica de regeneració òssia horitzontal"
+                        <img src="assets/c05-thumb.webp" width="800" height="450" decoding="async" alt="Seqüència quirúrgica de regeneració òssia horitzontal"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
                         horitzontal · seqüència quirúrgica</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c06.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c06.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c06.jpg" alt="Regeneració òssia horitzontal amb cargols de tenda"
+                        <img src="assets/c06-thumb.webp" width="800" height="450" decoding="async" alt="Regeneració òssia horitzontal amb cargols de tenda"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
                         horitzontal amb cargols de tenda</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c07.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c07.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c07.jpg" alt="Regeneració òssia horitzontal amb empelt autòleg i biomaterial"
+                        <img src="assets/c07-thumb.webp" width="800" height="450" decoding="async" alt="Regeneració òssia horitzontal amb empelt autòleg i biomaterial"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
                         horitzontal · empelt autòleg i biomaterial</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c08.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c08.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c08.jpg" alt="Elevació de si, regeneració horitzontal i implants"
+                        <img src="assets/c08-thumb.webp" width="800" height="450" decoding="async" alt="Elevació de si, regeneració horitzontal i implants"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Elevació de si +
                         regeneració horitzontal + implants</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c09.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c09.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c09.jpg" alt="Regeneració òssia horitzontal: situació inicial i resultat"
+                        <img src="assets/c09-thumb.webp" width="800" height="450" decoding="async" alt="Regeneració òssia horitzontal: situació inicial i resultat"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
                         horitzontal · situació inicial i resultat</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c10.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c10.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c10.jpg" alt="Dent inclosa amb planificació guiada per CBCT"
+                        <img src="assets/c10-thumb.webp" width="800" height="450" decoding="async" alt="Dent inclosa amb planificació guiada per CBCT"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Dent inclosa ·
                         planificació guiada per CBCT</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c11.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c11.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c11.jpg" alt="Rehabilitació maxil·lar amb elevació de si i tècnica sausage"
+                        <img src="assets/c11-thumb.webp" width="800" height="450" decoding="async" alt="Rehabilitació maxil·lar amb elevació de si i tècnica sausage"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Rehabilitació maxil·lar ·
                         elevació de si i tècnica «sausage»</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c12.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c12.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c12.jpg" alt="Regeneració òssia horitzontal"
+                        <img src="assets/c12-thumb.webp" width="800" height="450" decoding="async" alt="Regeneració òssia horitzontal"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia
                         horitzontal</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c13.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c13.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c13.jpg" alt="Implant immediat postextracció"
+                        <img src="assets/c13-thumb.webp" width="800" height="450" decoding="async" alt="Implant immediat postextracció"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Implant immediat
                         postextracció</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c14.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c14.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c14.jpg" alt="Regeneració òssia al sector anterior del maxil·lar"
+                        <img src="assets/c14-thumb.webp" width="800" height="450" decoding="async" alt="Regeneració òssia al sector anterior del maxil·lar"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia · sector
                         anterior maxil·lar</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c15.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c15.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c15.jpg" alt="Implant immediat postextracció en un molar"
+                        <img src="assets/c15-thumb.webp" width="800" height="450" decoding="async" alt="Implant immediat postextracció en un molar"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Implant immediat
                         postextracció · molar</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c16.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c16.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c16.jpg" alt="Elevació de si maxil·lar per finestra lateral"
+                        <img src="assets/c16-thumb.webp" width="800" height="450" decoding="async" alt="Elevació de si maxil·lar per finestra lateral"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Elevació de si maxil·lar ·
                         finestra lateral</figcaption>
                 </figure>
-                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c17.jpg">
+                <figure class="clinical-thumb group cursor-pointer" data-src="assets/c17.webp">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c17.jpg" alt="Elevació de si, regeneració horitzontal i implant"
+                        <img src="assets/c17-thumb.webp" width="800" height="450" decoding="async" alt="Elevació de si, regeneració horitzontal i implant"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Elevació de si +
@@ -781,7 +746,7 @@
 
                     <div class="space-y-8 mb-12">
                         <div class="flex items-start">
-                            <div class="text-accent-500 mr-4 mt-1"><i class="fa-solid fa-envelope text-lg"></i></div>
+                            <div class="text-accent-500 mr-4 mt-1"><svg class="icon text-lg" viewBox="0 0 512 512" aria-hidden="true"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></div>
                             <div>
                                 <h4 class="font-serif-premium text-lg font-medium text-primary-800">Correu electrònic</h4>
                                 <p class="text-neutral-500 text-sm font-light mt-1">
@@ -791,7 +756,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="text-accent-500 mr-4 mt-1"><i class="fa-solid fa-phone text-lg"></i></div>
+                            <div class="text-accent-500 mr-4 mt-1"><svg class="icon text-lg" viewBox="0 0 512 512" aria-hidden="true"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></div>
                             <div>
                                 <h4 class="font-serif-premium text-lg font-medium text-primary-800">Telèfon</h4>
                                 <p class="text-neutral-500 text-sm font-light mt-1">
@@ -807,7 +772,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="text-accent-500 mr-4 mt-1"><i class="fa-solid fa-location-dot text-lg"></i></div>
+                            <div class="text-accent-500 mr-4 mt-1"><svg class="icon text-lg" viewBox="0 0 384 512" aria-hidden="true"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg></div>
                             <div>
                                 <h4 class="font-serif-premium text-lg font-medium text-primary-800">Àmbit d'activitat</h4>
                                 <p class="text-neutral-500 text-sm font-light mt-1">
@@ -824,7 +789,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="text-accent-500 mr-4 mt-1"><i class="fa-solid fa-language text-lg"></i></div>
+                            <div class="text-accent-500 mr-4 mt-1"><svg class="icon text-lg" viewBox="0 0 640 512" aria-hidden="true"><path d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg></div>
                             <div>
                                 <h4 class="font-serif-premium text-lg font-medium text-primary-800">Idiomes</h4>
                                 <ul class="text-neutral-500 text-sm font-light mt-1 space-y-1">
@@ -958,7 +923,7 @@
         class="hidden fixed inset-0 z-[60] bg-primary-900/95 items-center justify-center p-4 lg:p-10">
         <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white text-3xl"
             aria-label="Tancar">
-            <i class="fa-solid fa-xmark"></i>
+            <svg class="icon" viewBox="0 0 384 512" aria-hidden="true"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
         </button>
         <img id="lightbox-img" src="" alt="Cas clínic ampliat"
             class="max-w-full max-h-full object-contain shadow-2xl">
@@ -968,19 +933,17 @@
         // Mobile menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        mobileMenuBtn.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            menuIcon.classList.toggle('fa-bars', !isOpen);
-            menuIcon.classList.toggle('fa-xmark', isOpen);
-        });
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        function setMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuIconOpen.classList.toggle('hidden', open);
+            menuIconClose.classList.toggle('hidden', !open);
+            mobileMenuBtn.setAttribute('aria-expanded', String(open));
+        }
+        mobileMenuBtn.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
         document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.add('fa-bars');
-                menuIcon.classList.remove('fa-xmark');
-            });
+            link.addEventListener('click', () => setMenu(false));
         });
 
         // Header shadow on scroll
@@ -1044,7 +1007,7 @@
             const btn = form.querySelector('button[type="submit"]');
             const original = btn.innerHTML;
             btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin mr-2"></i> Enviant...';
+            btn.innerHTML = '<svg class="icon animate-spin mr-2" viewBox="0 0 512 512" aria-hidden="true"><path d="M222.7 32.1c5 16.9-4.6 34.8-21.5 39.8C121.8 95.6 64 169.1 64 256c0 106 86 192 192 192s192-86 192-192c0-86.9-57.8-160.4-137.1-184.1c-16.9-5-26.6-22.9-21.5-39.8s22.9-26.6 39.8-21.5C434.9 42.1 512 140 512 256c0 141.4-114.6 256-256 256S0 397.4 0 256C0 140 77.1 42.1 182.9 10.6c16.9-5 34.8 4.6 39.8 21.5z"/></svg> Enviant...';
             try {
                 const res = await fetch(action, {
                     method: 'POST',

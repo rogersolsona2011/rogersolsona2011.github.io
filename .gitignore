@@ -9,3 +9,4 @@
 
 # never commit macOS metadata, even inside tracked folders
 **/.DS_Store
+!/tailwind/
