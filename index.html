@@ -314,7 +314,7 @@
                         </p>
                         <p>
                             La meva pràctica se centra en els casos que requereixen un abordatge quirúrgic:
-                            regeneració òssia horitzontal i vertical, tècnica de <em>saussage</em>, elevació de si
+                            regeneració òssia horitzontal i vertical, tècnica de <em>sausage</em>, elevació de si
                             maxil·lar, implants de càrrega immediata, implant immediat postextracció i rehabilitacions
                             completes planificades amb CBCT i cirurgia guiada.
                         </p>
@@ -391,7 +391,7 @@
                     </div>
                     <h3 class="font-serif-premium text-xl font-medium text-primary-800 mb-3">Regeneració òssia</h3>
                     <p class="text-sm text-neutral-600 font-light leading-relaxed">
-                        Regeneració òssia guiada horitzontal i vertical, tècnica de <em>saussage</em>, empelts en bloc i
+                        Regeneració òssia guiada horitzontal i vertical, tècnica de <em>sausage</em>, empelts en bloc i
                         particulats, i maneig de teixits tous per a un tancament sense tensió.
                     </p>
                 </div>
@@ -631,11 +631,11 @@
                 </figure>
                 <figure class="clinical-thumb group cursor-pointer" data-src="assets/c02.jpg">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c02.jpg" alt="Regeneració òssia vertical amb tècnica saussage"
+                        <img src="assets/c02.jpg" alt="Regeneració òssia vertical amb tècnica sausage"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Regeneració òssia vertical
-                        · tècnica «saussage»</figcaption>
+                        · tècnica «sausage»</figcaption>
                 </figure>
                 <figure class="clinical-thumb group cursor-pointer" data-src="assets/c03.jpg">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
@@ -703,11 +703,11 @@
                 </figure>
                 <figure class="clinical-thumb group cursor-pointer" data-src="assets/c11.jpg">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
-                        <img src="assets/c11.jpg" alt="Rehabilitació maxil·lar amb elevació de si i tècnica saussage"
+                        <img src="assets/c11.jpg" alt="Rehabilitació maxil·lar amb elevació de si i tècnica sausage"
                             class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <figcaption class="text-xs tracking-wider uppercase text-neutral-500 mt-3">Rehabilitació maxil·lar ·
-                        elevació de si i tècnica «saussage»</figcaption>
+                        elevació de si i tècnica «sausage»</figcaption>
                 </figure>
                 <figure class="clinical-thumb group cursor-pointer" data-src="assets/c12.jpg">
                     <div class="zoom-img-container bg-primary-900 aspect-[16/10]">
@@ -839,13 +839,18 @@
                 </div>
 
                 <div class="lg:col-span-6 reveal">
-                    <!-- TODO Roger: substitueix l'acció del formulari per l'endpoint real de Formspree (https://formspree.io/f/XXXXXXXX) o el teu servei de correu. -->
-                    <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST"
+                    <!-- Formulari via FormSubmit (formsubmit.co), sense compte. El primer enviament des de la web
+                         publicada envia un correu d'activació a rogersolsona2011@gmail.com: cal clicar "Activate Form". -->
+                    <form id="contact-form" action="https://formsubmit.co/ajax/rogersolsona2011@gmail.com" method="POST"
                         class="bg-white p-8 border border-neutral-200/80 shadow-lg space-y-6">
                         <h3 class="font-serif-premium text-xl font-medium text-primary-800 border-b border-neutral-100 pb-4">
                             Escriu-me un missatge
                         </h3>
                         <input type="hidden" name="_subject" value="Missatge enviat des de la web">
+                        <input type="hidden" name="_template" value="table">
+                        <!-- Antispam (honeypot): els humans no el veuen; si s'omple, FormSubmit descarta el missatge -->
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"
+                            style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 
                         <div>
                             <label for="name"
@@ -1029,21 +1034,13 @@
         lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-        // Contact form (progressive enhancement over Formspree)
+        // Contact form (AJAX via FormSubmit)
         const form = document.getElementById('contact-form');
         const statusEl = document.getElementById('form-status');
         form.addEventListener('submit', async (e) => {
             const action = form.getAttribute('action') || '';
-            if (action.includes('your-form-id')) {
-                // Endpoint not configured yet — don't lose the message, open the mail client.
-                e.preventDefault();
-                const body = encodeURIComponent(
-                    `Nom: ${form.name.value}\nCentre: ${form.entity.value}\n\n${form.message.value}`);
-                window.location.href =
-                    `mailto:rogersolsona2011@gmail.com?subject=${encodeURIComponent('Missatge enviat des de la web')}&body=${body}`;
-                return;
-            }
             e.preventDefault();
+            statusEl.classList.remove('text-green-700', 'text-red-600');
             const btn = form.querySelector('button[type="submit"]');
             const original = btn.innerHTML;
             btn.disabled = true;
@@ -1054,8 +1051,9 @@
                     body: new FormData(form),
                     headers: { 'Accept': 'application/json' }
                 });
+                const data = await res.json().catch(() => ({}));
                 statusEl.classList.remove('hidden');
-                if (res.ok) {
+                if (res.ok && String(data.success) !== 'false') {
                     form.reset();
                     statusEl.textContent = 'Missatge enviat. Et respondré al més aviat possible.';
                     statusEl.classList.add('text-green-700');
