@@ -6,3 +6,7 @@ Allow: /
 # Imatges fora de Google Imatges
 User-agent: Googlebot-Image
 Disallow: /
+
+# Que Google no faci servir la web per entrenar Gemini / IA
+User-agent: Google-Extended
+Disallow: /
