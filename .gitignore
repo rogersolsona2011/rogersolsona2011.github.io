@@ -10,3 +10,5 @@
 # never commit macOS metadata, even inside tracked folders
 **/.DS_Store
 !/tailwind/
+!/robots.txt
+!/sitemap.xml
