@@ -1,4 +1,8 @@
+# La web no s'ha d'indexar: cada pàgina porta <meta name="robots" content="noindex">.
+# Els cercadors han de poder llegir les pàgines per veure aquesta etiqueta, per això no es bloquegen aquí.
 User-agent: *
 Allow: /
 
-Sitemap: https://rogersolsona2011.github.io/sitemap.xml
+# Imatges fora de Google Imatges
+User-agent: Googlebot-Image
+Disallow: /
